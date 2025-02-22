@@ -389,6 +389,7 @@ input:focus {
     opacity: 1 !important;
     visibility: visible !important;
     height: auto !important;
+    color: white !important;
     padding: 5rem 10%;
     background: var(--primary-color);
     position: relative;
