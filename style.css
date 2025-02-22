@@ -529,7 +529,7 @@ input:focus {
 /* Responsive Modal for Small Screens */
 @media (max-width: 768px) {
     #home{
-        padding-top: 200px;
+        padding-top: 150px;
     }
     .modal-contents {
         width: 95%; /* More width for better fit */
