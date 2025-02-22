@@ -21,7 +21,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 /* Circuit Board Background Animation */
@@ -261,7 +261,7 @@ input:focus {
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .hero {
@@ -792,7 +792,7 @@ th {
     padding: 20px;
     width: 60%;
     margin: auto;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     min-height: 250px; /* Increased height */
 }
@@ -803,7 +803,7 @@ th {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
 }
 .members {
     display: flex;
@@ -1014,7 +1014,7 @@ section h2::after {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
     cursor: pointer;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     min-width: 300px;
     background: rgba(255, 255, 255, 0.05);
