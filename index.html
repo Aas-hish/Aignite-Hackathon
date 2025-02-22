@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aignite Hackathon | SVCET</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav>
+            <div class="logo">
+                <img src="logo/college_logo.png" alt="Logo" class="logo-img">
+                <div class="separator"></div>
+                <span>Aignite</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#problems">Problems</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#schedule">Schedule</a>
+
+            </div>
+            <button class="register-btn">Register Now</button>
+        </nav>
+
+        <!-- Registration Modal -->
+        <div class="modal" id="registerModal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Team Registration</h2>
+                <form id="registrationForm">
+                    <div id="teamMembers"></div>
+                    <button type="submit" class="submit-btn register-btn">Submit
+                        Registration</button>
+                    <p id="waitMessage"
+                        style="display: none; color: white; font-size: 14px; margin: 10px;">
+                        Please wait for a while...
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Home Section -->
+        <section id="home">
+            <div class="hero">
+                <h1 class="animated-text">Aignite Hackathon</h1>
+                <p class="college_name">Sri Venkateswara College of Engineering
+                    and Technology(Autonomous), Chittoor</p>
+                <p class="quote">"Code, Create, Conquer!"</p>
+                <div class="date-container">
+                    <div class="date-badge">March 7<sup>th</sup> - 8<sup>th</sup>, 2025</div>
+                    <p class="current-date"></p>
+                </div>
+                <div class="ai-elements">
+                    <div class="robot"></div>
+                    <div class="circuit-lines"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Aignite </h2>
+            <div class="about-content problem-card">
+                <p>Hackathon AIgnite is a high-energy, AI-focused hackathon
+                    where innovation takes center stage. Designed for passionate
+                    developers, tech enthusiasts, and problem-solvers, AIgnite
+                    challenges participants to push the limits of artificial
+                    intelligence and technology.
+                    <strong>The event is jointly organised by Department of Computer Science and Engineering, in association with Training and Skill Development Cell, and Start-up, Innovation and Entrepreneurship Cell.</strong>
+
+                    Our goal is to foster creativity, collaboration, and
+                    groundbreaking solutions by bringing together talented minds
+                    from diverse backgrounds. With intense coding sessions,
+                    expert mentorship, and real-world problem statements,
+                    AIgnite provides an exciting platform to develop AI-driven
+                    solutions that make a difference.
+
+                    Whether you're a beginner or an experienced coder, AIgnite
+                    is your chance to compete, learn, and showcase your AI
+                    expertise. Join us and ignite the future of technology!</p>
+            </div>
+
+            <!-- Problems Section -->
+            <section id="problems">
+                <h2>Problem Statements</h2>
+                <div class="search-container">
+                    <input type="text" id="problemSearch"
+                        placeholder="Search problems...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="problems-grid" id="problemsGrid">
+                    <!-- Problems will be populated via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Problem Modal Structure -->
+            <div id="problemModal" class="modals">
+                <div class="modal-contents">
+                    <span class="close-modal">&times;</span>
+                    <h2 id="modalTitle"></h2>
+                    <table>
+                        <tr>
+                            <th>Problem ID</th>
+                            <td id="modalProblemId"></td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td id="modalDescription"></td>
+                        </tr>
+                        <tr>
+                            <th>Field</th>
+                            <td id="modalField"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="gallery-section">
+                <h2>Event Gallery</h2>
+                <div class="gallery-container">
+                    <div class="gallery-box" data-event="technical">
+                        <h3>Technical Events</h3>
+                        <div class="gallery-content">
+                            <div class="gallery-grid">
+                                <img src="technical_image/TEC_01.jpg"
+                                    alt="Technical Event 1">
+                                <img src="technical_image/TEC_02.jpg"
+                                    alt="Technical Event 2">
+                                <img src="technical_image/TEC_03.jpg"
+                                    alt="Technical Event 3">
+                                <img src="technical_image/TEC_04.jpg"
+                                    alt="Technical Event 4">
+                                <img src="technical_image/TEC_05.jpg"
+                                    alt="Technical Event 5">
+                                <img src="technical_image/TEC_06.jpg"
+                                    alt="Technical Event 6">
+                                <img src="technical_image/TEC_07.jpg"
+                                    alt="Technical Event 7">
+                                <img src="technical_image/TEC_08.jpg"
+                                    alt="Technical Event 8">
+                                <img src="technical_image/TEC_09.jpg"
+                                    alt="Technical Event 9">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-box" data-event="cultural">
+                        <h3>Cultural Events</h3>
+                        <div class="gallery-content">
+                            <div class="gallery-grid">
+                                <img src="cultural_image/CUL_01.jpg"
+                                    alt="Cultural Event 1">
+                                <img src="cultural_image/CUL_02.jpg"
+                                    alt="Cultural Event 2">
+                                <img src="cultural_image/CUL_03.jpg"
+                                    alt="Cultural Event 3">
+                                <img src="cultural_image/CUL_04.jpg"
+                                    alt="Cultural Event 4">
+                                <img src="cultural_image/CUL_05.jpg"
+                                    alt="Cultural Event 5">
+                                <img src="cultural_image/CUL_06.jpg"
+                                    alt="Cultural Event 6">
+                                <img src="cultural_image/CUL_07.jpg"
+                                    alt="Cultural Event 7">
+                                <img src="cultural_image/CUL_08.jpg"
+                                    alt="Cultural Event 8">
+                                <img src="cultural_image/CUL_09.jpg"
+                                    alt="Cultural Event 9">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Schedule Section -->
+            <section id="schedule">
+                <h2>Event Schedule</h2>
+                <div class="timeline">
+                    <div class="day">
+                        <h3>Day 1 - March 7</h3>
+                        <div class="events" id="day1Events">
+                            <!-- Schedule will be populated via JavaScript -->
+                        </div>
+                    </div>
+                    <div class="day">
+                        <h3>Day 2 - March 8</h3>
+                        <div class="events" id="day2Events">
+                            <!-- Schedule will be populated via JavaScript -->
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Prize Pool Section -->
+            <section id="prizes">
+                <h2>Prize Pool</h2>
+                <div class="prizes-container">
+                    <div class="prize-card first">
+                        <div class="trophy"><i class="fas fa-trophy"></i></div>
+                        <h3>1st Prize</h3>
+                        <p>Coming Soon</p>
+                    </div>
+                    <div class="prize-card second">
+                        <div class="trophy"><i class="fas fa-medal"></i></div>
+                        <h3>2nd Prize</h3>
+                        <p>Coming Soon</p>
+                    </div>
+                    <div class="prize-card third">
+                        <div class="trophy"><i class="fas fa-award"></i></div>
+                        <h3>3rd Prize</h3>
+                        <p>Coming Soon</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="rules">
+                <h3>Rules</h3>
+                <ul id="rulesList">
+                    <!-- Rules will be populated via JavaScript -->
+                </ul>
+            </div>
+
+            <div class="faqs">
+                <h3>FAQs</h3>
+                <div class="faq-container" id="faqContainer">
+                    <!-- FAQs will be populated via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <div class="floating-text">Registration Opens on February 24<sup>th</sup></div>
+
+
+        <!-- Organized By Section -->
+        <section class="organized-by">
+            <h2>Organized By</h2>
+            <div class="problem-card organized-card">
+                <div class="scroll-container">
+                    <button class="scroll-btn left"
+                        onclick="scrollLeft()">&#9665;</button>
+                    <div class="members">
+                        <div class="member">
+                            <img src="organizer/principal.jpg" alt="Member 2">
+                            <p class="name">Dr M. Mohan Babu</p>
+                            <p class="department">Principal</p>
+                        </div>
+
+                        <div class="member">
+                            <img src="organizer/hod_maam.jpg" alt="Member 1">
+                            <p class="name">P. Jyotheeswari</p>
+                            <p class="post">Head of Department</p>
+                            <p class="department">CSE Department</p>
+
+                        </div>
+                        <div class="member">
+                            <img src="organizer/TRajaReddy.jpg" alt="Member 3">
+                            <p class="name">Dr T.Raja Reddy</p>
+                            <p class="post">Dean</p>
+                            <p class="department">SIE Cell</p>
+                        </div>
+                        <div class="member">
+                            <img src="organizer/sendhil_sir.jpg" alt="Member 3">
+                            <p class="name">Mr. N. Sendhil Kumar</p>
+                            <p class="post">Dean</p>
+                            <p class="department">Training and Skill</p>
+                        </div>
+
+                    </div>
+                    <button class="scroll-btn right"
+                        onclick="scrollRight()">&#9655;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: contact@aignitehackathon.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a
+                            href="https://www.instagram.com/cse_deptsvcet?igsh=aHV6eHVwdjB5YWRp"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#problems">Problems</a>
+                    <a href="#schedule">Schedule</a>
+                    <a href="#about">About</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aignite Hackathon. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
