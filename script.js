@@ -634,3 +634,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".organized-card").forEach(card => {
+        let members = card.querySelectorAll(".member").length;
+        let width = Math.min(180 + members * 150, 900); // Adjust width dynamically
+        card.style.width = width + "px"; // Set dynamic width
+    });
+});
