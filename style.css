@@ -1154,3 +1154,37 @@ section h2::after {
 }
 
 
+.developed-by {
+    width: 100%;
+    background:var(--primary-color);
+    border-top: 2px solid var(--text-color);
+    color: white;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Outer wrapper to ensure smooth movement */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Inner scrolling text */
+.marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
